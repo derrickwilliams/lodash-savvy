@@ -1,0 +1,1 @@
+window.onload = () => _savvy.bootstrap(document, _, CodeMirror);
