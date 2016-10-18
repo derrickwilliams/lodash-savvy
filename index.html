@@ -59,12 +59,12 @@
 
       processBtn.addEventListener('click', (e) => {
         try {
-          const rawDataIn = rawDataEditor.getValue();
+          const rawDataIn = JSON.parse(rawDataEditor.getValue());
           const lodashCodeIn = lodashCodeEditor.getValue();
 
           /* func = */ eval(lodashCodeIn);
 
-          return resultsDisplay.setValue(JSON.stringify(func(data), null, 2));
+          return resultsDisplay.setValue(JSON.stringify(func(rawDataIn), null, 2));
         }
         catch(e) {
           return resultsDisplay.setValue(e.toString());
